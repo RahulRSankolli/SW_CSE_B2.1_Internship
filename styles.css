@@ -1,10 +1,12 @@
-/* styles.css - Start styling your potfolio website here */
+/* styles.css - Complete Portfolio Stylesheet */
+
 /* === RESET & BASE === */
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
+
 /* CSS Custom Properties (variables) - DRY Principle */
 :root {
     --primary: #1B4F72;
@@ -13,55 +15,82 @@
     --light: #F4F6F8;
     --white: #FFFFFF;
     --font-main: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
- 
 }
+
 body {
     font-family: var(--font-main);
     color: var(--text);
     line-height: 1.6;
     background-color: var(--white);
 }
+
 /* NAVIGATION */
-.site-header{
+.site-header {
     position: sticky;
     top: 0;
     z-index: 1000;
     background: var(--primary);
-    transition: background 0.3s ease, box-shadow 0.3s ease; /*Day 9*/
+    transition: background 0.3s ease, box-shadow 0.3s ease;
 }
+
 .navbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 20px 5%;
-   
 }
-.logo{
+
+.logo {
     font-size: 28px;
     font-weight: bold;
     color: var(--white);
 }
+
 .nav-links {
     list-style: none;
     display: flex;
     gap: 30px;
 }
+
 .nav-links a {
     color: var(--white);
     text-decoration: none;
     font-weight: 500;
     transition: color 0.3s;
 }
+
 .nav-links a:hover {
     color: var(--accent);
- 
 }
-.nav-links a.active{
+
+.nav-links a.active {
     color: var(--accent);
     font-weight: bold;
     border-bottom: 2px solid var(--accent);
 }
- 
+
+/* === SECTION STYLES === */
+section {
+    padding: 80px 5%;
+}
+
+section h2 {
+    text-align: center;
+    font-size: 2.2rem;
+    margin-bottom: 50px;
+    color: var(--primary);
+}
+
+section h2::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 4px;
+    background: var(--accent);
+    margin: 12px auto 0;
+    border-radius: 2px;
+}
+
 /* HERO SECTION */
 .hero-section {
     text-align: center;
@@ -69,8 +98,145 @@ body {
     color: var(--white);
     padding: 100px 5%;
 }
+
 .hero-section h1 {
     font-size: 3rem;
     margin-bottom: 20px;
- 
+}
+
+.hero-section p {
+    font-size: 1.2rem;
+    max-width: 600px;
+    margin: 0 auto 30px;
+    opacity: 0.9;
+}
+
+.cta-button {
+    display: inline-block;
+    padding: 12px 30px;
+    background: var(--accent);
+    color: var(--white);
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 6px;
+    transition: background 0.3s, transform 0.2s;
+}
+
+.cta-button:hover {
+    background: #d87f00;
+    transform: translateY(-2px);
+}
+
+/* ABOUT SECTION */
+.about-content {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+    font-size: 1.1rem;
+    background: var(--light);
+    padding: 40px;
+    border-radius: 12px;
+}
+
+/* SKILLS SECTION */
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+    margin-top: 40px;
+    justify-items: space-between;
+}
+
+.skill-item {
+    background: var(--light);
+    border: 2px solid var(--primary);
+    border-radius: 12px;
+    padding: 30px 20px;
+    text-align: center;
+    font-weight: bold;
+    font-size: 1.1rem;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.skill-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+}
+
+/* PROJECTS SECTION */
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.project-card {
+    background: var(--light);
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+    display: flex;
+    flex-direction: column;
+}
+
+.project-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+}
+
+.project-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.project-card-body {
+    padding: 20px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.project-card-body h3 {
+    margin-bottom: 10px;
+    color: var(--primary);
+}
+
+.project-card-body p {
+    font-size: 0.95rem;
+    flex-grow: 1;
+    margin-bottom: 15px;
+}
+
+/* CONTACT SECTION */
+.contact-section {
+    background: var(--light);
+    text-align: center;
+}
+
+.contact-info {
+    max-width: 500px;
+    margin: 0 auto;
+    font-size: 1.1rem;
+}
+
+.contact-info a {
+    color: var(--primary);
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.contact-info a:hover {
+    color: var(--accent);
+}
+
+/* FOOTER */
+footer {
+    background: var(--primary);
+    color: var(--white);
+    text-align: center;
+    padding: 20px 5%;
+    font-size: 0.9rem;
 }
