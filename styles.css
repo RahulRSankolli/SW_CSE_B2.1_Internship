@@ -59,15 +59,29 @@ body {
     transition: color 0.3s;
 }
 
-.nav-links a:hover {
+.site-header.scrolled {
+    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.2);
+}
+
+.nav-links a:hover,
+.nav-links a.active {
     color: var(--accent);
 }
 
 .nav-links a.active {
-    color: var(--accent);
     font-weight: bold;
     border-bottom: 2px solid var(--accent);
 }
+
+.menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    color: #fff;
+    font-size: 30px;
+    cursor: pointer;
+}
+
 /* === BUTTON STYLES === */
 .btn{
     display: inline-block;
@@ -309,10 +323,7 @@ figcaption{
 }
 
 /* CONTACT SECTION */
-.contact-section {
-    background: var(--light);
-    text-align: center;
-}
+
 
 .contact-info {
     max-width: 500px;
@@ -357,18 +368,19 @@ figcaption{
 }
 .form-group input:focus,
 .form-group textarea:focus,
-.form-group .form-select:focus{
+.form-select:focus{
     border-color: var(--primary);
     outline: none;
     box-shadow: 0 0 0 3px rgba(27, 79, 114, 0.2);
 }
  
 /* FOOTER */
-footer {
+/* === FOOTER === */
+.site-footer {
     background: var(--primary);
-    color: var(--white);
+    color: rgba(255, 255, 255, 0.8);
     text-align: center;
-    padding: 20px 5%;
+    padding: 40px 5%;
     font-size: 0.9rem;
 }
 /* === FOOTER === */
@@ -377,4 +389,42 @@ footer {
     color: rgba(255, 255, 255, 0.8);
     text-align: center;
     padding: 40px 5%;
+}
+/* === ANIMATIONS === */
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* === RESPONSIVE / MOBILE NAVIGATION === */
+@media (max-width: 768px) {
+    .menu-toggle {
+        display: block;
+    }
+
+    .nav-links {
+        display: none;
+        position: absolute;
+        top: 70px;
+        left: 0;
+        width: 100%;
+        background: var(--primary);
+        flex-direction: column;
+        text-align: center;
+        padding: 20px 0;
+        gap: 20px;
+    }
+
+    .nav-links.open {
+        display: flex;
+    }
+
+    .hero-section h1 {
+        font-size: 2rem;
+    }
+
+    .projects-grid,
+    .skills-grid {
+        grid-template-columns: 1fr;
+    }
 }
