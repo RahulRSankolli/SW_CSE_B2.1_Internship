@@ -68,7 +68,62 @@ body {
     font-weight: bold;
     border-bottom: 2px solid var(--accent);
 }
-
+/* === BUTTON STYLES === */
+.btn{
+    display: inline-block;
+    padding: 12px 28px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1rem;
+    cursor: pointer;
+    border: 2px solid transparent;
+    transition: all 0.3s ease;
+    margin-top: 15px;
+     
+}
+.btn-primary{
+    background: var(--accent);
+    color: var(--white);
+   
+}
+.btn-primary:hover{
+    background: transparent;
+    color: var(--accent);
+    border-color: var(--accent);
+}
+.btn-secondary{
+    background: transparent;
+    color: var(--white);
+    border-color: var(--white);
+}
+.btn-secondary:hover{
+    background: var(--white);
+    color: var(--primary);
+}
+.project-filters{
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 30px;
+}
+.filter-btn{
+    padding: 8px 20px;
+    background: transparent;
+    border: 2px solid var(--primary);
+    color: var(--primary);
+    border-radius: 25px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+.filter-btn:hover,
+.filter-btn.active{
+    background: var(--primary);
+    color: var(--white);
+ 
+}
+ 
 /* === SECTION STYLES === */
 section {
     padding: 80px 5%;
@@ -90,7 +145,50 @@ section h2::after {
     margin: 12px auto 0;
     border-radius: 2px;
 }
-
+/* === ABOUT SECTION === */
+.about-content{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap:30px;
+    max-width: 1000px;
+    margin: 0 auto;
+    text-align: center;
+}
+.profile-figure{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+   
+}
+.profile-figure img{
+   aspect-ratio: 1/1;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 5px solid var(--primary);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+    transition: transform 0.3s ease;
+}
+ 
+.profile-figure img:hover{
+    transform: scale(1.05); /* Slight zoom effect on hover */
+}
+figcaption{
+    margin-top: 15px;
+    font-weight: bold;
+    color: var(--primary);
+}
+ 
+.about-text{
+    max-width: 700px;
+    text-align: center;
+    font-weight: bold;
+    color: var(--primary);
+   
+}
+ 
 /* HERO SECTION */
 .hero-section {
     text-align: center;
@@ -231,7 +329,40 @@ section h2::after {
 .contact-info a:hover {
     color: var(--accent);
 }
-
+/* === CONTACT FORM === */
+.contact-section{
+    background: var(--light);
+}
+ 
+.form-group{
+    margin-bottom: 24px;
+}
+ 
+.form-group label{
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: var(--primary);
+}
+ 
+.form-group input,
+.form-group textarea,
+.form-select{
+    width: 100%;
+    padding: 14px 16px;
+    border: 2px solid #DDD;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: border-color 0.3s;
+}
+.form-group input:focus,
+.form-group textarea:focus,
+.form-group .form-select:focus{
+    border-color: var(--primary);
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(27, 79, 114, 0.2);
+}
+ 
 /* FOOTER */
 footer {
     background: var(--primary);
@@ -239,4 +370,11 @@ footer {
     text-align: center;
     padding: 20px 5%;
     font-size: 0.9rem;
+}
+/* === FOOTER === */
+.site-footer{
+    background: var(--primary);
+    color: rgba(255, 255, 255, 0.8);
+    text-align: center;
+    padding: 40px 5%;
 }
