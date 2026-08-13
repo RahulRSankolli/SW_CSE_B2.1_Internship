@@ -21,5 +21,5 @@ const getGreeting = () => {
 const heroTitle = document.querySelector('.hero-section h1');
 console.log(heroTitle);
 if(heroTitle){
-    heroTitle.textContent = `${getGreeting()}, I'm Rithik 👋`;
+    heroTitle.textContent = `${getGreeting()}, I'm Rahul 👋`;
 }
