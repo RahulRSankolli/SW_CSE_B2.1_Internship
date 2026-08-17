@@ -101,3 +101,78 @@ if (myForm) {
         alert(Entered Value: ${inputValue});
     });
 }
+// === DAY 11: ASYNC, FETCH & LOCAL STORAGE ===
+
+// --- 1. setTimeout ---
+const asyncOutput = document.querySelector('#async-output');
+const btnPizza = document.querySelector('#btn-pizza');
+const btnSalad = document.querySelector('#btn-salad');
+
+if (btnPizza && btnSalad) {
+    btnPizza.addEventListener('click', () => {
+        asyncOutput.textContent += "\n> 🍕 Pizza ordered! Cooking...";
+        setTimeout(() => {
+            asyncOutput.textContent += "\n> ✅ DING! Pizza is ready!";
+        }, 3000);
+    });
+
+    btnSalad.addEventListener('click', () => {
+        asyncOutput.textContent += "\n> 🥗 Salad prepared instantly!";
+    });
+}
+
+// --- 2. Fetch API ---
+const btnFetch = document.querySelector('#btn-fetch');
+
+if (btnFetch) {
+    btnFetch.addEventListener('click', async () => {
+        const fetchText = document.querySelector('#fetch-text');
+        const loader = document.querySelector('#loader');
+
+        btnFetch.disabled = true;
+        fetchText.style.display = 'none';
+        loader.style.display = 'block';
+
+        try {
+            const response = await fetch('https://jsonplaceholder.typicode.com/users/1');
+            if (!response.ok) throw new Error(HTTP ${response.status});
+
+            const user = await response.json();
+            console.log('User Data:', user);
+
+            fetchText.style.display = 'block';
+            fetchText.textContent = Name: ${user.name}\nEmail: ${user.email}\nCity: ${user.address.city};
+        } catch (error) {
+            fetchText.style.display = 'block';
+            fetchText.textContent = "❌ Error fetching data!";
+            console.error(error);
+        } finally {
+            loader.style.display = 'none';
+            btnFetch.disabled = false;
+        }
+    });
+}
+
+// --- 3. Local Storage ---
+const secretInput = document.querySelector('#secret-input');
+const savedText = document.querySelector('#saved-text');
+const btnSave = document.querySelector('#btn-save');
+const btnClear = document.querySelector('#btn-clear');
+
+if (btnSave && btnClear) {
+    const saved = localStorage.getItem('mySecret');
+    if (saved) savedText.textContent = saved;
+
+    btnSave.addEventListener('click', () => {
+        const value = secretInput.value.trim();
+        if (!value) return;
+        localStorage.setItem('mySecret', value);
+        savedText.textContent = value;
+        secretInput.value = '';
+    });
+
+    btnClear.addEventListener('click', () => {
+        localStorage.removeItem('mySecret');
+        savedText.textContent = 'None';
+    });
+}
