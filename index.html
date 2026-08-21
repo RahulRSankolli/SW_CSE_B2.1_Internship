@@ -61,6 +61,7 @@
                 </figure>
                 <div class="about-text">
                     <p>I'm a passionate web developer focused on crafting intuitive user experiences and clean code.</p>
+                    <p>I enjoy learning new skills, building projects, and improving my programming knowledge. I'm always looking for opportunities to learn and grow.</p>
                 </div>
             </div>
         </section>
@@ -73,6 +74,10 @@
                 <div class="skill-item" data-level="80">CSS3</div>
                 <div class="skill-item" data-level="75">JavaScript</div>
                 <div class="skill-item" data-level="65">React</div>
+
+                <div class="skill-item" data-level="90">Python</div>
+                <div class="skill-item" data-level="80">C</div>
+                <div class="skill-item" data-level="65">SQL</div>
             </div>
         </section>
 
@@ -80,10 +85,13 @@
         <section id="projects" class="projects-section">
             <h2>My Projects</h2>
             <div class="project-filters">
+                <!-- The data-filter attribute is what our JS will read -->
                 <button class="filter-btn active" data-filter="all">All</button>
                 <button class="filter-btn" data-filter="web">Web</button>
                 <button class="filter-btn" data-filter="design">Design</button>
             </div>
+
+            <!-- The data-category attribute is what the filter buttons match against -->
             <div class="projects-grid">
                 <article class="project-card" data-category="web">
                     <img src="images/weather_app.png" alt="Weather App Project">
@@ -98,7 +106,7 @@
                         <a href="#" class="btn btn-primary">Live Demo</a>
                         <a href="#" class="btn btn-secondary">GitHub</a>
                     </div>
-                </article>        
+                </article>
             </div>
         </section>
 
@@ -123,14 +131,12 @@
         </section>
 
     </main>
-<form id="myForm">
-    <input type="text" id="userInput" placeholder="Type something here..." required>
-    <button type="submit" id="myBtn">Submit</button>
-</form>
+
     <!-- FOOTER -->
     <footer class="site-footer">
         <p>
-            &copy; 2026 Rahul. Built with HTML, CSS & ❤️
+            &copy; <span class="footer-year">2026</span> Rahul.
+            Built with HTML, CSS &amp; ❤️
         </p>
 
         <nav aria-label="Social links">
@@ -141,11 +147,4 @@
 
     <script src="script.js"></script>
 </body>
-</html>
-
-</main>
-
-<form id="myForm">  
-    <input type="text" id="userInput" placeholder="Type something here..." required>  
-    <button type="submit" id="myBtn">Submit</button>  
-</form>
+</html>*
